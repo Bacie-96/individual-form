@@ -1,0 +1,30 @@
+<body>
+<h1>WayWard Learning College student profile</h1>
+<div *ngIf="User" >
+   Student Name     : {{User.Name}} <br>
+   Student No       : {{User.UserID}} <br>
+   Student info     :  {{User.Bio}}<br>
+</div>
+<div *ngIf="Subjects" >
+  Subject Name          :  {{Subjects. subjname}}<br>
+  Subject Mark          :  {{Subjects. subjmarks}} <br>
+  Subject Teacher : {{Subjects. subjteacher}}<br>
+  Year Registered : {{Subjects. year}}<br><br>
+  <hr>
+  Message          : {{Subjects.mes}}
+</div>
+</body>
+<style>
+  body{
+    background-color:ghostwhite;
+    font-size: 20px;
+    }
+    h1{
+       height: 50px;
+      margin-top: 5px;
+        text-align: center;
+        background-color: darkgrey;
+        font-weight: 1000px;
+        font-family:'Times New Roman', Times, serif;
+    }
+</style>

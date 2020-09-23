@@ -1,0 +1,86 @@
+<body>
+<h1>WayWard Learning College </h1>
+
+<h2>List of registered students</h2>
+<div *ngFor="let items of Days">
+    <!--an if statement-->
+<div *ngIf="items == 'Sunday'|| items == 'Saturday'; else elseTemplate">
+    <ul>
+        <li style="color:red">  {{items}} weekend</li>
+    </ul>
+</div>
+<ng-template #elseTemplate>
+      <ul>
+          <li>{{items}}</li>
+        </ul> 
+    </ng-template>
+</div>
+<h4>Click below the students name to view their profiles</h4>
+<img src="/assets/img/bp.jpg">
+<img src="/assets/img/Tee.jpg">
+<img src="/assets/img/tlou.jpg">
+<img src="/assets/img/nnana.jpg">
+<p> Mashabela Baatseba &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Moagi Tebogo &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tsipa Tlou &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Mphahlele Motlalepula</p>
+<div *ngFor="let Usr of Profiles">
+    <ul>
+        
+             <a [routerLink]="['/','profile', Usr.UserID]" routerLinkActive="router-Link-Active">
+                <li> {{Usr.Name}} </li>
+
+            </a>
+            
+    </ul>
+
+     {{Usr.Bio}} 
+   
+     
+</div>
+<h3>Form</h3>
+<h5>Add new item</h5>
+<p>Name &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Bio</p>
+
+<form #form="ngForm" (ngSubmit)="updates(form)">
+    <input name="name" #name="ngModel" ngModel required>
+    <input name="bio" #name="ngModel" ngModel required>
+    <button type="submit">Update details</button>
+</form>
+<p>{{form.value.name}}</p>
+<p>Delete item</p>
+<!--
+    <ul>
+        
+    <li *ngFor ="let name of users">
+        {{users.name}}
+        <button(click)="deletes(users.name)">click</button>
+    </li>
+</ul>
+-->
+</body>
+<style>
+    h1{
+       height: 50px;
+      padding-top: 30px;
+      text-align: center;
+      background-color: darkgrey;
+      padding-bottom: 20px;
+   }
+   img{
+      border-radius: 50px;
+     height: 200px;
+    
+   }
+   h4, h2, h3{
+      height: 50px;
+     margin-top: 5px;
+       text-align: center;
+       background-color: darkgrey;
+       font-weight: 1000px;
+       font-family:'Times New Roman', Times, serif;
+   }
+   body{
+   background-color:ghostwhite;
+   font-size: 20px;
+}
+</style>
